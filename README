@@ -4,6 +4,19 @@ a simple implement of big-integer (add, sub, mul, div)
 一个简(jian)单(lou)的高精度整数实现
 含加减乘除四则运算
 
-BigInt.cpp           C++ 的实现与样例程序
-BigIntPython.py      Python3 写的功能相同的程序，用来测试正确性
-BigIntDatagen.py     测试数据生成器
+文件说明：
+    BigInt.cpp           高精度整数的实现
+    BigInt.h             高精度整数的头文件
+    BigIntApp.cpp        样例程序
+
+    BigIntPython.py      Python3 写的功能相同的程序，用来测试正确性
+    BigIntDatagen.py     测试数据生成器
+
+编译：
+    g++ -Wall -O2 -o BigInt BigInt.cpp BigIntApp.cpp
+
+执行测试：
+    python3 BigIntDatagen.py > data.txt &&
+    python3 BigIntPython.py < data.txt > 1.out &&
+    ./BigInt < data.txt > 2.out &&
+    diff 1.out 2.out
