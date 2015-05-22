@@ -10,12 +10,12 @@ while True:
     elif op == '*':
         print(a * b)
     elif op == '-':
-        if a >= b:
-            print(a - b)
-        else:
-            print("ERROR: a is less than b.")
+        print(a - b)
     elif op == '/':
         if b != 0:
-            print(a // b)
+            if ((a < 0 and b > 0) or (a > 0 and b < 0)) and a % b != 0:
+                print(a // b + 1)
+            else:
+                print(a // b)
         else:
             print("ERROR: divided by zero.")
